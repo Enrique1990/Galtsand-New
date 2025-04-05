@@ -3,7 +3,7 @@
   assign title_text_size = 'heading-size' | append: section.settings.title_text_size
   assign title_text_color = section.settings.title_text_color
   assign section_subtitle = section.settings.subtitle
-  assign section_subtitle_text_size = 'body-size' | section.settings.subtitle_text_size
+  assign section_subtitle_text_size = 'body-size' | append: section.settings.subtitle_text_size
   assign subtitle_text_color = section.settings.subtitle_text_color
   assign text_alignment = section.settings.text_allignment
 %}
@@ -85,6 +85,7 @@
       "id": "collection_to_show",
       "label": "Number of collections to show",
       "min": 4,
+      "step": 1,
       "max": 10,
       "default": 7
     }
@@ -154,6 +155,12 @@
           ]
         }
       ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Small Collection Grid",
+      "blocks": [{ "type": "collection_card" }]
     }
   ]
 }
