@@ -11,11 +11,18 @@
   assign button_style = section.settings.button_style
   assign button_color = section.settings.button_color
 %}
-<section class="section-small-collection-grid">
-  <div class="section-small-collection-grid_header {{ text_alignment }}">
+<section
+  class="section-small-collection-grid {{ section.settings.width }} section-padding"
+  style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;"
+  data-section-id="{{ section.id }}"
+  data-section-type="collection-row"
+>
+  <div
+    class="section-small-collection-grid_header {{ text_alignment }}"
+  >
     {% if section_title != blank %}
       <h1
-        class="column-product-collection-section__title heading {{ title_font_size_class }} text-center"
+        class=" heading {{ title_font_size_class }}"
         style="color: {{ title_text_color }};"
       >
         {{ section_title }}
@@ -23,7 +30,7 @@
     {% endif %}
     {% if section_subtitle != blank %}
       <p
-        class="column-product-collection-section__subtitle {{ sub_text_size }} text-center mb-r8"
+        class="body {{ sub_text_size }} mb-r8"
         style="color: {{ subtitle_text_color }};"
       >
         {{ section_subtitle }}
@@ -37,13 +44,12 @@
           assign block_button_url = block.settings.button_url
           assign block_button_label = block.settings.button_label
         %}
-        <div class="block-collection-card">
-          <div class="block-collection-card_image">
-            {{ block.settings.image | image_url: width: 1000 | image_tag }}
-          </div>
-          <div class="block-collection-card_text">
-            {{ block.settings.text }}
-          </div>
+        <div class="block-collection-card {{ text_alignment }}" {{ block.shopify_attributes }}>
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 1000 | image_tag: class: 'block-collection-card_image' }}
+          {% endif %}
+          <h3 class="body body-size-5">{{ block.settings.text }}</h3>
+
           <a
             href="{{ block_button_url }}"
             class="{{ button_style }} {{ button_size }} {{ button_color }}"
@@ -55,7 +61,13 @@
     </div>
   </div>
 </section>
-
+<style>
+  .section-small-collection-grid_content-grid {
+    display: grid;
+    grid-template-columns: repeat({{collection_to_show}}, 1fr);
+    justify-items: center;
+  }
+</style>
 {% schema %}
 {
   "name": "Small Collection Grid",
@@ -123,6 +135,10 @@
       "default": 7
     },
     {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
       "type": "text",
       "id": "button_label",
       "label": "Button Label",
@@ -170,6 +186,41 @@
         { "value": "btn--black", "label": "Black" },
         { "value": "btn--white", "label": "White" }
       ]
+    },
+    {
+      "type": "header",
+      "content": "Section spacing"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Section width",
+      "default": "wrapper--none",
+      "options": [
+        { "value": "wrapper--none", "label": "Full width" },
+        { "value": "wrapper--full", "label": "Full width padded" },
+        { "value": "wrapper", "label": "Page width" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 180,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 180,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
     }
   ],
   "blocks": [
@@ -191,7 +242,7 @@
           "type": "text",
           "id": "button_label",
           "label": "Button Label",
-          "default": "Watch Video"
+          "default": "SHOP NOW"
         },
         {
           "type": "url",
