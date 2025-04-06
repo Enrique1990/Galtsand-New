@@ -457,6 +457,7 @@
         "collection_card_jR3DXB",
         "collection_card_WUkqdw"
       ],
+      "disabled": true,
       "settings": {
         "title": "Curated Collections",
         "title_text_size": 10,
@@ -471,7 +472,9 @@
         "button_size": "btn--small",
         "button_style": "btn-text-thick-line",
         "button_color": "btn--black",
-        "width": "wrapper"
+        "width": "wrapper--none",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "card_cascade_F4z48g": {
