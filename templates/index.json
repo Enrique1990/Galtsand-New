@@ -381,6 +381,99 @@
         "arrow_color": "#ffffff"
       }
     },
+    "small_collection_grid_xqdYiz": {
+      "type": "small-collection-grid",
+      "blocks": {
+        "collection_card_6GHYUF": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/untitled2_2f1a4f05-1786-4df8-9209-c74ac329a9e7.png",
+            "text": "Tailoring",
+            "button_label": "Shop now",
+            "button_url": ""
+          }
+        },
+        "collection_card_Rh4z7k": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/untitled8_5e15e935-f35e-4f86-ae62-fe57d095e640.png",
+            "text": "Dresses",
+            "button_label": "Shop now",
+            "button_url": ""
+          }
+        },
+        "collection_card_agz8Nr": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/untitled5_337420bf-28a7-4057-a937-68d02dfb7573.png",
+            "text": "Pants",
+            "button_label": "Shop now",
+            "button_url": ""
+          }
+        },
+        "collection_card_nVyJF3": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/untitled29.png",
+            "text": "Bags",
+            "button_label": "Shop now",
+            "button_url": ""
+          }
+        },
+        "collection_card_mpM4M4": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/untitled1_1be766ae-4ea8-4ffc-80e7-6471f1627454.png",
+            "text": "Jackets",
+            "button_label": "Shop now",
+            "button_url": ""
+          }
+        },
+        "collection_card_jR3DXB": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/untitled_bdc41141-d4a6-4d21-9aac-0e022799ea50.png",
+            "text": "Pants",
+            "button_label": "Shop now",
+            "button_url": ""
+          }
+        },
+        "collection_card_WUkqdw": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/untitled_3b9bd234-805c-4aad-8ac6-0581023fcdc8.png",
+            "text": "Shorts",
+            "button_label": "Shop now",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_6GHYUF",
+        "collection_card_Rh4z7k",
+        "collection_card_agz8Nr",
+        "collection_card_nVyJF3",
+        "collection_card_mpM4M4",
+        "collection_card_jR3DXB",
+        "collection_card_WUkqdw"
+      ],
+      "settings": {
+        "title": "Curated Collections",
+        "title_text_size": 10,
+        "title_text_color": "#000000",
+        "subtitle": "Handcarfted by our expert designers",
+        "subtitle_text_size": 5,
+        "subtitle_text_color": "#000000",
+        "text_allignment": "text-center",
+        "collection_to_show": 7,
+        "button_label": "Watch Video",
+        "button_url": "",
+        "button_size": "btn--small",
+        "button_style": "btn-text-thick-line",
+        "button_color": "btn--black",
+        "width": "wrapper"
+      }
+    },
     "card_cascade_F4z48g": {
       "type": "card-cascade",
       "blocks": {
@@ -721,7 +814,14 @@
           "settings": {
             "title": "",
             "title_color": "#660f28",
+            "title_size": 0,
             "alignment": "center",
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
             "background_color": "",
             "feed_id": "",
             "html_area": ""
@@ -772,6 +872,7 @@
     "video_with_modal_zPUEPT",
     "section_collection_slider_yEBj8t",
     "collection-split-section-1",
+    "small_collection_grid_xqdYiz",
     "card_cascade_F4z48g",
     "section_list_collections_products_N6gfAm",
     "card_cascade_TyENQQ",
