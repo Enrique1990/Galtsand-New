@@ -48,7 +48,7 @@
           {% if block.settings.image != blank %}
             {{ block.settings.image | image_url: width: 1000 | image_tag: class: 'block-collection-card_image' }}
           {% endif %}
-          <h3 class="body body-size-5">{{ block.settings.text }}</h3>
+          <h3 class="body body-size-6" style="text-transform: uppercase;">{{ block.settings.text }}</h3>
 
           <a
             href="{{ block_button_url }}"
