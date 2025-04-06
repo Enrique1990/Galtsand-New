@@ -1,0 +1,212 @@
+{% liquid
+  assign section_title = section.settings.title
+  assign title_text_color = section.settings.title_text_color
+  assign section_subtitle = section.settings.subtitle
+  assign subtitle_text_color = section.settings.subtitle_text_color
+  assign text_alignment = section.settings.text_allignment
+  assign title_font_size_class = 'heading-size-' | append: section.settings.title_text_size
+  assign sub_text_size = 'body-size-' | append: section.settings.subtitle_text_size
+  assign collection_to_show = section.settings.collection_to_show
+  assign button_size = section.settings.button_size
+  assign button_style = section.settings.button_style
+  assign button_color = section.settings.button_color
+%}
+<section class="section-small-collection-grid">
+  <div class="section-small-collection-grid_header {{ text_alignment }}">
+    {% if section_title != blank %}
+      <h1
+        class="column-product-collection-section__title heading {{ title_font_size_class }} text-center"
+        style="color: {{ title_text_color }};"
+      >
+        {{ section_title }}
+      </h1>
+    {% endif %}
+    {% if section_subtitle != blank %}
+      <p
+        class="column-product-collection-section__subtitle {{ sub_text_size }} text-center mb-r8"
+        style="color: {{ subtitle_text_color }};"
+      >
+        {{ section_subtitle }}
+      </p>
+    {% endif %}
+  </div>
+  <div class="section-small-collection-grid_content">
+    <div class="section-small-collection-grid_content-grid">
+      {% for block in section.blocks %}
+        {% liquid
+          assign block_button_url = block.settings.button_url
+          assign block_button_label = block.settings.button_label
+        %}
+        <div class="block-collection-card">
+          <div class="block-collection-card_image">
+            {{ block.settings.image | image_url: width: 1000 | image_tag }}
+          </div>
+          <div class="block-collection-card_text">
+            {{ block.settings.text }}
+          </div>
+          <a
+            href="{{ block_button_url }}"
+            class="{{ button_style }} {{ button_size }} {{ button_color }}"
+          >
+            {{ block_button_label }}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Small Collection Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Curated Collections"
+    },
+    {
+      "type": "range",
+      "id": "title_text_size",
+      "label": "Title text size",
+      "min": 1,
+      "max": 15,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "title_text_color",
+      "label": "Title text color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Handcarfted by our expert designers"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_text_size",
+      "label": "Subtext size",
+      "min": 1,
+      "max": 15,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "subtitle_text_color",
+      "label": "Subtext color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "text_allignment",
+      "label": "Text allignment",
+      "default": "text-center",
+      "options": [
+        { "value": "text-center", "label": "Center" },
+        { "value": "text-left", "label": "Left" },
+        { "value": "text-right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "collection_to_show",
+      "label": "Number of collections to show",
+      "min": 4,
+      "step": 1,
+      "max": 10,
+      "default": 7
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Watch Video"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL",
+      "info": "setting this will override the video button"
+    },
+    {
+      "type": "select",
+      "id": "button_size",
+      "label": "Size",
+      "default": "btn--long",
+      "options": [
+        { "value": "btn--small", "label": "Small button" },
+        { "value": "btn--medium", "label": "Medium button" },
+        { "value": "btn--large", "label": "Large button" },
+        { "value": "btn--long", "label": "Long button" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Style",
+      "default": "btn",
+      "options": [
+        { "value": "btn-text-thick-line", "label": "Capitalized text" },
+        { "value": "btn", "label": "Solid button" },
+        { "value": "btn--soft", "label": "Soft button" },
+        { "value": "btn--outline", "label": "Outlined button" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "button_color",
+      "label": "Color",
+      "default": "btn--white",
+      "options": [
+        { "value": "btn--primary", "label": "Bright accent" },
+        { "value": "btn--secondary", "label": "Secondary accent" },
+        { "value": "btn--neutral", "label": "Text color" },
+        { "value": "btn--black", "label": "Black" },
+        { "value": "btn--white", "label": "White" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_card",
+      "name": "Collection Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Collection Item Title"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Watch Video"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL",
+          "info": "setting this will override the video button"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Small Collection Grid",
+      "blocks": [{ "type": "collection_card" }]
+    }
+  ]
+}
+{% endschema %}
