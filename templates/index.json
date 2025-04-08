@@ -387,82 +387,82 @@
         "collection_card_6GHYUF": {
           "type": "collection_card",
           "settings": {
-            "image": "shopify://shop_images/untitled2_2f1a4f05-1786-4df8-9209-c74ac329a9e7.png",
-            "text": "Tailoring",
+            "image": "shopify://shop_images/untitled.webp",
+            "text": "Serengheti Buckle Belt Hicking Short",
             "button_label": "Shop now",
-            "button_url": ""
-          }
-        },
-        "collection_card_Rh4z7k": {
-          "type": "collection_card",
-          "settings": {
-            "image": "shopify://shop_images/untitled8_5e15e935-f35e-4f86-ae62-fe57d095e640.png",
-            "text": "Dresses",
-            "button_label": "Shop now",
-            "button_url": ""
-          }
-        },
-        "collection_card_agz8Nr": {
-          "type": "collection_card",
-          "settings": {
-            "image": "shopify://shop_images/untitled5_337420bf-28a7-4057-a937-68d02dfb7573.png",
-            "text": "Pants",
-            "button_label": "Shop now",
-            "button_url": ""
-          }
-        },
-        "collection_card_nVyJF3": {
-          "type": "collection_card",
-          "settings": {
-            "image": "shopify://shop_images/untitled29.png",
-            "text": "Bags",
-            "button_label": "Shop now",
-            "button_url": ""
+            "button_url": "shopify://products/buckle-belt-hiking-short"
           }
         },
         "collection_card_mpM4M4": {
           "type": "collection_card",
           "settings": {
-            "image": "shopify://shop_images/untitled1_1be766ae-4ea8-4ffc-80e7-6471f1627454.png",
-            "text": "Jackets",
+            "image": "shopify://shop_images/untitled_75a6ac22-582f-4c01-9f2b-15b2d6c41663.webp",
+            "text": "Geneva Quarter Zip Dress",
             "button_label": "Shop now",
-            "button_url": ""
+            "button_url": "shopify://products/geneva-dress"
           }
         },
-        "collection_card_jR3DXB": {
+        "collection_card_Rh4z7k": {
           "type": "collection_card",
           "settings": {
-            "image": "shopify://shop_images/untitled_bdc41141-d4a6-4d21-9aac-0e022799ea50.png",
-            "text": "Pants",
+            "image": "shopify://shop_images/untitled_35d55160-c069-437b-98d8-032f3bcbac0b.webp",
+            "text": "Mountain Hunter Vest",
             "button_label": "Shop now",
-            "button_url": ""
+            "button_url": "shopify://products/mountain-hunter-vest"
           }
         },
         "collection_card_WUkqdw": {
           "type": "collection_card",
           "settings": {
-            "image": "shopify://shop_images/untitled_3b9bd234-805c-4aad-8ac6-0581023fcdc8.png",
-            "text": "Shorts",
+            "image": "shopify://shop_images/untitled5_0cf92875-386d-46e0-8ab3-eaa45b3ca1a3.webp",
+            "text": "Traverse Nylon S/S Zip Front Shirt",
             "button_label": "Shop now",
-            "button_url": ""
+            "button_url": "shopify://products/traverse-nylon-s-s-zip-front-shirt"
+          }
+        },
+        "collection_card_agz8Nr": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/untitled_eceb4e80-8242-4f67-8d69-81d346c18612.webp",
+            "text": "Pacific Shacket",
+            "button_label": "Shop now",
+            "button_url": "shopify://products/pacific-shacket"
+          }
+        },
+        "collection_card_jR3DXB": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/untitled_0163e9fc-0e5f-4184-967a-2799ea83233c.webp",
+            "text": "Courtside Sweater",
+            "button_label": "Shop now",
+            "button_url": "shopify://products/knit-varsity-v-neck-sweater"
+          }
+        },
+        "collection_card_nVyJF3": {
+          "type": "collection_card",
+          "settings": {
+            "image": "shopify://shop_images/untitled_c855dca8-811f-4613-885b-5180e3ca2594.webp",
+            "text": "Athena Chino Khaki Asymmetric Skirt",
+            "button_label": "Shop now",
+            "button_url": "shopify://products/athena-chino-khaki-asymmetric-skirt"
           }
         }
       },
       "block_order": [
         "collection_card_6GHYUF",
-        "collection_card_Rh4z7k",
-        "collection_card_agz8Nr",
-        "collection_card_nVyJF3",
         "collection_card_mpM4M4",
+        "collection_card_Rh4z7k",
+        "collection_card_WUkqdw",
+        "collection_card_agz8Nr",
         "collection_card_jR3DXB",
-        "collection_card_WUkqdw"
+        "collection_card_nVyJF3"
       ],
-      "disabled": true,
+      "custom_css": [],
       "settings": {
         "title": "Galtsand's Most Wanted",
         "title_text_size": 10,
         "title_text_color": "#000000",
-        "subtitle": "Handcarfted by our expert designers",
+        "subtitle": "",
         "subtitle_text_size": 5,
         "subtitle_text_color": "#000000",
         "text_allignment": "text-center",
