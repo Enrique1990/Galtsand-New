@@ -353,7 +353,9 @@
         "collection_card_99gVRN",
         "collection_card_nKDEHr"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".card-cascade__card-image {aspect-ratio: auto;}"
+      ],
       "settings": {
         "title": "Trending Now",
         "title_text_size": 10,
