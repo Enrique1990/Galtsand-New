@@ -38,36 +38,101 @@
     {% endif %}
   </div>
   <div class="section-small-collection-grid_content">
-    <div class="section-small-collection-grid_content-grid">
+    <div class="section-small-collection-grid_content-grid swiper-wrapper">
       {% for block in section.blocks %}
         {% liquid
           assign block_button_url = block.settings.button_url
           assign block_button_label = block.settings.button_label
         %}
-        <div class="block-collection-card {{ text_alignment }}" {{ block.shopify_attributes }}>
+        <div class="block-collection-card {{ text_alignment }} swiper-slide" {{ block.shopify_attributes }}>
           {% if block.settings.image != blank %}
             {{ block.settings.image | image_url: width: 1000 | image_tag: class: 'block-collection-card_image' }}
           {% endif %}
-          <h3 class="body body-size-6" style="text-transform: uppercase;">{{ block.settings.text }}</h3>
+          <h3 class="body body-size-5" style="flex: 1;">{{ block.settings.text }}</h3>
 
           <a
             href="{{ block_button_url }}"
-            class="{{ button_style }} {{ button_size }} {{ button_color }}"
+            class="standard__cta hero__btn {{ button_style }} {{ button_size }} {{ button_color }}"
           >
             {{ block_button_label }}
           </a>
         </div>
       {% endfor %}
     </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
 </section>
 <style>
-  .section-small-collection-grid_content-grid {
-    display: grid;
-    grid-template-columns: repeat({{collection_to_show}}, 1fr);
-    justify-items: center;
+  :root {
+    --swiper-navigation-size: 30px;
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-sides-offset: 10px;
+    --swiper-navigation-color: #000000;
+  }
+  .section-small-collection-grid_content {
+    position: relative;
+    overflow: hidden;
+  }
+  @media (min-width: 1000px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+    .section-small-collection-grid_content-grid {
+      display: grid;
+      grid-template-columns: repeat({{collection_to_show}}, 1fr);
+      justify-items: center;
+    }
+  }
+  .block-collection-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .block-collection-card .standard__cta {
+    margin-top: 5px;
   }
 </style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function initSwiper() {
+      const smallCollectionGrid = new Swiper('.section-small-collection-grid_content', {
+      spaceBetween: 10,
+      freeMode: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: {{ collection_to_show }},
+        },
+        1280: {
+          slidesPerView: {{ collection_to_show }},
+        },
+      },
+    });
+    }
+    if (window.innerWidth < 1000) {
+      initSwiper();
+    }
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 1000) {
+        smallCollectionGrid.destroy(true, true);
+      } else {
+        initSwiper();
+      }
+    });
+  });
+</script>
 {% schema %}
 {
   "name": "Small Collection Grid",
