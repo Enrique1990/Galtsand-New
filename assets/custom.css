@@ -416,6 +416,7 @@ span.swym-wish-counter.swym-wishlist-header-counter {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .section-collection-split-button-container{
