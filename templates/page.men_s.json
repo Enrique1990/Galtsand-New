@@ -338,8 +338,8 @@
         "button_RB9wME": {
           "type": "button",
           "settings": {
-            "link_text": "Browse all collections",
-            "link": "shopify://collections"
+            "link_text": "Browse all products",
+            "link": "shopify://collections/all"
           }
         }
       },
